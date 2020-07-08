@@ -1,1 +1,24 @@
+server:
+  port: 9002
 
+spring:
+  application:
+    # Dubbo 应用名称
+    name: goods-service
+  main:
+    # Spring Boot 2.1 需要设定
+    allow-bean-definition-overriding: true
+
+dubbo:
+  scan:
+    # dubbo 服务扫描基准包
+    base-packages: com.sun
+  protocol:
+    # dubbo 协议
+    name: dubbo
+    # dubbo 协议端口（ -1 表示自增端口，从 20880 开始）
+    port: -1
+  registry:
+    address: nacos://localhost:8848
+  cloud:
+    subscribed-services: base-service
