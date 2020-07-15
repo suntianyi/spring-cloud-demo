@@ -1,12 +1,8 @@
-package com.sun.model;
+package com.sun.po;
 
 import lombok.Data;
 
 import java.io.Serializable;
-
-/**
- * @author sunzh
- */
 
 @Data
 public class GoodsSpu implements Serializable {

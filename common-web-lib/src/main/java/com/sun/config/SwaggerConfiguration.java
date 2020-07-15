@@ -15,7 +15,6 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
 /**
  * 访问地址：http://xxxx/doc.html
- * @author sunzh
  */
 
 @Configuration

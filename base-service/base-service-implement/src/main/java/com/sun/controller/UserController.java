@@ -1,20 +1,15 @@
 package com.sun.controller;
 
-import com.sun.model.User;
+import com.sun.constants.MessageConstants;
+import com.sun.dto.UserInsertDTO;
+import com.sun.po.User;
 import com.sun.result.Result;
 import com.sun.service.UserService;
-import lombok.extern.slf4j.Slf4j;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
+import java.util.List;
 
-/**
- * @author sunzh
- */
-
-@Slf4j
 @RestController
 @RequestMapping(value = "/user")
 public class UserController {
@@ -24,8 +19,19 @@ public class UserController {
         this.userService = userService;
     }
 
+    @GetMapping(value = "")
+    public Result<List<User>> list(@RequestHeader(value = "user") User user) {
+        String orgId = user.getOrgId();
+        return Result.success(userService.list(orgId));
+    }
+
     @GetMapping(value = "{id}")
     public Result<User> get(@PathVariable String id) {
-        return Result.success(userService.get(id));
+        return Result.success(userService.get(id, null, null));
+    }
+
+    @PostMapping(value = "/insert")
+    public Result<String> insert(@Valid UserInsertDTO user) {
+        return userService.insert(user) ? Result.success(MessageConstants.ADD_SUCCESS) : Result.fail(MessageConstants.ADD_FAIL);
     }
 }

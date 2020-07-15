@@ -1,15 +1,11 @@
-package com.sun.model;
+package com.sun.dto;
 
 import lombok.Data;
 
 import java.io.Serializable;
 
-/**
- * @author sunzh
- */
-
 @Data
-public class User implements Serializable {
+public class UserDTO implements Serializable {
     private static final long serialVersionUID = -1;
 
     private String id;

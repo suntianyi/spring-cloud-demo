@@ -16,3 +16,5 @@ management:
   endpoint:
     health:
       show-details: always
+
+ignore_url_reg: login

@@ -1,11 +1,14 @@
 package com.sun.service;
 
-import com.sun.model.User;
+import com.sun.dto.UserInsertDTO;
+import com.sun.po.User;
 
-/**
- * @author sunzh
- */
+import java.util.List;
 
 public interface UserService {
-    User get(String id);
+    List<User> list(String orgId);
+
+    User get(String id, String userName, String phone);
+
+    boolean insert(UserInsertDTO user);
 }
