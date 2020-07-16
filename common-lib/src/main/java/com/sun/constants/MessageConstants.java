@@ -5,10 +5,13 @@ public class MessageConstants {
     public final static String WARN = "操作需额外条件";
     public final static String FAIL = "操作失败";
 
-    public final static String ILLEGAL_PARAM = "参数非法";
+    public final static String PARAM_ILLEGAL = "参数非法";
 
-    public final static String ILLEGAL_PASSWORD = "用户名或密码不正确";
-    public final static String ILLEGAL_CAPTCHA = "验证码不正确";
+    public static final String USERNAME_FORMAT_ERROR = "用户名需大于2位，小于20位";
+    public static final String PHONE_FORMAT_ERROR = "手机号格式错误";
+    public static final String PASSWORD_FORMAT_ERROR = "密码需大于6位，小于20位";
+    public final static String PASSWORD_ILLEGAL = "用户名或密码不正确";
+    public final static String CAPTCHA_ILLEGAL = "验证码不正确";
 
     public final static String ADD_SUCCESS = "添加成功";
     public final static String ADD_FAIL = "添加失败";

@@ -47,16 +47,16 @@ public class LoginController {
     }
 
     private User checkPassword(String userName, String phone, String password) {
-        Assert.hasText(password, MessageConstants.ILLEGAL_PARAM);
+        Assert.hasText(password, MessageConstants.PARAM_ILLEGAL);
         User user = userService.get(null, userName, phone);
-        Assert.isTrue(password.equalsIgnoreCase(user.getPassword()), MessageConstants.ILLEGAL_PASSWORD);
+        Assert.isTrue(password.equalsIgnoreCase(user.getPassword()), MessageConstants.PASSWORD_ILLEGAL);
         return user;
     }
 
     private User checkCaptcha(String phone, String captcha) {
         String key = RedisKeyPrefixConstants.SHORT_MESSAGE + "-" + phone;
         String c = redisTemplate.opsForValue().get(key);
-        Assert.isTrue(c != null && c.equals(captcha), MessageConstants.ILLEGAL_CAPTCHA);
+        Assert.isTrue(c != null && c.equals(captcha), MessageConstants.CAPTCHA_ILLEGAL);
         return userService.get(null, phone, phone);
     }
 }
