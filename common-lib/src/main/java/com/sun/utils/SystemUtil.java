@@ -6,9 +6,8 @@ import java.lang.reflect.Method;
 import java.math.BigInteger;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.UUID;
+import java.util.*;
+import java.util.stream.Collectors;
 
 public class SystemUtil {
     public static String uuid() {
@@ -50,13 +49,12 @@ public class SystemUtil {
         return map;
     }
 
-    public static <T> T copy(Object object, Class<T> clazz) {
-        if (object == null) return null;
-
+    public static <T> T copy(Object source, Class<T> target) {
+        if (source == null) return null;
         try {
-            Field[] fields = object.getClass().getDeclaredFields();
-            Object t = clazz.newInstance();
-            Method[] methods = clazz.getMethods();
+            Field[] fields = source.getClass().getDeclaredFields();
+            Object t = target.newInstance();
+            Method[] methods = target.getMethods();
             for (Method method : methods) {
                 if (method.getName().startsWith("set")) {
                     String field = method.getName().substring(3);
@@ -64,7 +62,7 @@ public class SystemUtil {
                     for (Field f : fields) {
                         if (field.equals(f.getName())) {
                             f.setAccessible(true);
-                            Object value = f.get(object);
+                            Object value = f.get(source);
                             if (value == null) continue;
                             method.invoke(t, value);
                         }
@@ -76,5 +74,12 @@ public class SystemUtil {
             e.printStackTrace();
         }
         return null;
+    }
+
+    public static <T, E> List<E> copyList(List<T> source, Class<E> target) {
+        if (null == source || source.isEmpty()) {
+            return Collections.emptyList();
+        }
+        return source.stream().map(e -> copy(e, target)).collect(Collectors.toList());
     }
 }
