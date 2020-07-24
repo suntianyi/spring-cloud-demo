@@ -17,4 +17,4 @@ management:
     health:
       show-details: always
 
-ignore_url_reg: login
+ignore_url_reg: login|v2/api-docs

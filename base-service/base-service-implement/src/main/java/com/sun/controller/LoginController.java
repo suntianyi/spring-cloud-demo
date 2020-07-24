@@ -9,6 +9,8 @@ import com.sun.result.Result;
 import com.sun.service.UserService;
 import com.sun.utils.JWTUtil;
 import com.sun.utils.SystemUtil;
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.util.Assert;
@@ -22,6 +24,7 @@ import java.util.Map;
 @Slf4j
 @RestController
 @RequestMapping(value = "")
+@Api(tags = "登录")
 public class LoginController {
     private final UserService userService;
 
@@ -32,7 +35,8 @@ public class LoginController {
         this.redisTemplate = redisTemplate;
     }
 
-    @PostMapping("/login")
+    @PostMapping(value = "/login")
+    @ApiOperation(value = "登录")
     public Result<Map<String, Object>> login(String userName, String phone, String password, String captcha, LoginType type, PlatformType platform) {
         Map<String, Object> resultMap = new HashMap<>();
         User user = null;
