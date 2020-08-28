@@ -8,6 +8,7 @@ import com.sun.service.UserService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import lombok.extern.slf4j.Slf4j;
+import org.apache.commons.lang.StringUtils;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
@@ -39,7 +40,10 @@ public class UserController {
 
     @PostMapping(value = "/insert")
     @ApiOperation(value = "添加用户")
-    public Result<String> insert(@Valid UserInsertDTO user) {
-        return userService.insert(user) ? Result.success(MessageConstants.ADD_SUCCESS) : Result.fail(MessageConstants.ADD_FAIL);
+    public Result<String> insert(@RequestHeader(value = "user") User user, @Valid UserInsertDTO userInsertDTO) {
+        if (StringUtils.isEmpty(userInsertDTO.getOrgId())) {
+            userInsertDTO.setOrgId(user.getOrgId());
+        }
+        return userService.insert(userInsertDTO) ? Result.success(MessageConstants.ADD_SUCCESS) : Result.fail(MessageConstants.ADD_FAIL);
     }
 }

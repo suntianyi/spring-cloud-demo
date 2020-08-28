@@ -21,9 +21,7 @@ public class UserInsertDTO {
     @Size(min = 6, max = 20, message = MessageConstants.PASSWORD_FORMAT_ERROR)
     private String password;
 
-    @NotNull
     private String orgId;
 
-    @NotNull
     private String deptId;
 }
