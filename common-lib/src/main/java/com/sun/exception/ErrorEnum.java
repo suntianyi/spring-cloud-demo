@@ -2,7 +2,6 @@ package com.sun.exception;
 
 /**
  * 异常枚举基类，业务异常枚举需要继承本类
- * @author sunzh
  */
 
 public interface ErrorEnum {

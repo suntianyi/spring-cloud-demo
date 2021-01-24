@@ -5,10 +5,6 @@ import com.sun.service.UserService;
 import org.apache.dubbo.config.annotation.Service;
 import org.springframework.stereotype.Component;
 
-/**
- * @author sunzh
- */
-
 @Component
 @Service(interfaceClass = UserService.class)
 public class UserServiceImpl implements UserService {

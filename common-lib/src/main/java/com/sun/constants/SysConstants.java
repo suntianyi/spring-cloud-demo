@@ -2,7 +2,6 @@ package com.sun.constants;
 
 /**
  * 系统通用常量
- * @author sunzh
  */
 
 public class SysConstants {

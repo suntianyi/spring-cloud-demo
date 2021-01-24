@@ -16,10 +16,6 @@ import java.lang.reflect.Field;
 import java.util.List;
 import java.util.Map;
 
-/**
- * @author sunzh
- */
-
 @Slf4j
 public class HTTPUtils {
     /**

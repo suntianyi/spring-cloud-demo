@@ -5,10 +5,6 @@ import com.sun.service.GoodsService;
 import org.apache.dubbo.config.annotation.Service;
 import org.springframework.stereotype.Component;
 
-/**
- * @author sunzh
- */
-
 @Component
 @Service(interfaceClass = GoodsService.class)
 public class GoodsServiceImpl implements GoodsService {

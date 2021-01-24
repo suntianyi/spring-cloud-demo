@@ -22,3 +22,14 @@ dubbo:
     address: nacos://localhost:8848
   cloud:
     subscribed-services: base-service
+
+rocketmq:
+  name-server: 127.0.0.1:9876
+  env: dev
+  producer:
+    group: producerGroup
+  topic:
+    order: topic-order-${rocketmq.env}
+  consumer:
+    group:
+      order: consumer-order-${rocketmq.env}

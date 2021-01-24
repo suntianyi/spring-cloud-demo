@@ -2,7 +2,6 @@ package com.sun.exception;
 
 /**
  * 通用业务异常定义
- * @author sunzh
  */
 
 public enum ErrorCode implements ErrorEnum {

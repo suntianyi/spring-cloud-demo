@@ -22,9 +22,10 @@
     </properties>
 
     <modules>
+        <module>gateway-service</module>
         <module>base-service</module>
         <module>goods-service</module>
-        <module>pay-service</module>
+        <module>common-web-lib</module>
         <module>common-lib</module>
     </modules>
 

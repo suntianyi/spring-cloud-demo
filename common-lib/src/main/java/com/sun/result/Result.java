@@ -5,13 +5,9 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-/**
- * @author sunzh
- */
-
+@Data
 @AllArgsConstructor
 @NoArgsConstructor
-@Data
 public class Result<T> {
     private boolean success = true;
     private T data;

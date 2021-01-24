@@ -1,8 +1,2 @@
 # Project exclude paths
-/base-service/base-service-implement/target/
-/base-service/base-service-interface/target/
-/common-lib/target/
-/common-web-lib/target/
-/gateway-service/target/
-/goods-service/goods-service-implement/target/
-/pay-service/pay-service-implement/target/
+target/

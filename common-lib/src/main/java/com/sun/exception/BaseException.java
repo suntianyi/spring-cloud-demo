@@ -1,9 +1,5 @@
 package com.sun.exception;
 
-/**
- * @author sunzh
- */
-
 public class BaseException extends RuntimeException {
 
     private String errorCode;

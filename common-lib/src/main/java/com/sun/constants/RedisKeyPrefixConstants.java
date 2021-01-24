@@ -2,7 +2,6 @@ package com.sun.constants;
 
 /**
  * redis key前缀
- * @author sunzh
  */
 
 public class RedisKeyPrefixConstants {
