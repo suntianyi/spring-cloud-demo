@@ -24,9 +24,6 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
-/**
- * @author Eric Zhao
- */
 @Configuration
 public class GatewayConfiguration {
 

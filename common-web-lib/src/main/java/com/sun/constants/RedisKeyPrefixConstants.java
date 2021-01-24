@@ -6,7 +6,7 @@ package com.sun.constants;
 
 public class RedisKeyPrefixConstants {
     /**
-     * 短信验证码前缀
+     * 短信验证码
      */
     public static final String SHORT_MESSAGE = "SHORT_MESSAGE-";
 

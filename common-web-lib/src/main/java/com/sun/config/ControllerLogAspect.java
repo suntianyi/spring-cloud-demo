@@ -14,13 +14,10 @@ public class ControllerLogAspect {
     @Around("execution(* com.sun..*Controller*.*(..))")
     public Object logTime(ProceedingJoinPoint pjp) throws Throwable {
         long begin = System.currentTimeMillis();
-        String method = pjp.getSignature().getName();
-        String className = pjp.getTarget().getClass().getName();
         Object ret = pjp.proceed();
-        long cost = System.currentTimeMillis() - begin;
+        long end = System.currentTimeMillis();
         log.info("响应结果：{}", JSON.toJSONString(ret));
-        log.info("<" + className + "." + method + "> 方法耗时 <"
-                + cost + "> ms");
+        log.info("方法耗时: {}毫秒", end -begin);
         return ret;
     }
 }
