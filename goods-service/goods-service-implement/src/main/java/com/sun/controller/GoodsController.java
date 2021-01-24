@@ -1,8 +1,8 @@
 package com.sun.controller;
 
 import com.alibaba.fastjson.JSON;
-import com.sun.po.GoodsSpu;
-import com.sun.po.User;
+import com.sun.model.GoodsSpu;
+import com.sun.model.User;
 import com.sun.result.Result;
 import com.sun.service.GoodsService;
 import com.sun.service.UserService;

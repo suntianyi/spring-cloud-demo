@@ -4,14 +4,11 @@ import com.sun.constants.MessageConstants;
 import com.sun.constants.SysConstants;
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
-/**
- * @author sunzh
- */
-
+@Data
 @AllArgsConstructor
 @NoArgsConstructor
-@Data
 public class Result<T> {
     private String code;
     private String message;

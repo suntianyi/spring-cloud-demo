@@ -1,6 +1,6 @@
 package com.sun.service.impl;
 
-import com.sun.po.GoodsSpu;
+import com.sun.model.GoodsSpu;
 import com.sun.service.GoodsService;
 import org.apache.dubbo.config.annotation.Service;
 import org.springframework.stereotype.Component;

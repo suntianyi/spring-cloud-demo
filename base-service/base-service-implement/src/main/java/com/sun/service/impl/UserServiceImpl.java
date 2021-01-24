@@ -1,7 +1,7 @@
 package com.sun.service.impl;
 
 import com.sun.dto.UserInsertDTO;
-import com.sun.po.User;
+import com.sun.model.User;
 import com.sun.service.UserService;
 import org.apache.dubbo.config.annotation.Service;
 import org.springframework.stereotype.Component;

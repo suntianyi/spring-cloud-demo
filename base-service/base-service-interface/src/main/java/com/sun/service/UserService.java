@@ -1,7 +1,7 @@
 package com.sun.service;
 
 import com.sun.dto.UserInsertDTO;
-import com.sun.po.User;
+import com.sun.model.User;
 
 import java.util.List;
 

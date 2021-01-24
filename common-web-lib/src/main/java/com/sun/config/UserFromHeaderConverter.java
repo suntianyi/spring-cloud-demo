@@ -1,7 +1,7 @@
 package com.sun.config;
 
 import com.alibaba.fastjson.JSON;
-import com.sun.po.User;
+import com.sun.model.User;
 import org.springframework.core.convert.converter.Converter;
 import org.springframework.lang.NonNull;
 import org.springframework.stereotype.Component;

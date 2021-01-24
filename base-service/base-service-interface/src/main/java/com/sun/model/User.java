@@ -1,4 +1,4 @@
-package com.sun.po;
+package com.sun.model;
 
 import lombok.Data;
 

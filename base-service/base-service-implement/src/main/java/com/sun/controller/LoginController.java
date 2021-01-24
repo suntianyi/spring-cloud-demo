@@ -4,7 +4,7 @@ import com.sun.constants.MessageConstants;
 import com.sun.constants.RedisKeyPrefixConstants;
 import com.sun.enums.LoginType;
 import com.sun.enums.PlatformType;
-import com.sun.po.User;
+import com.sun.model.User;
 import com.sun.result.Result;
 import com.sun.service.UserService;
 import com.sun.utils.JWTUtil;

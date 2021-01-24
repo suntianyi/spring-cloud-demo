@@ -2,7 +2,7 @@ package com.sun.controller;
 
 import com.sun.constants.MessageConstants;
 import com.sun.dto.UserInsertDTO;
-import com.sun.po.User;
+import com.sun.model.User;
 import com.sun.result.Result;
 import com.sun.service.UserService;
 import io.swagger.annotations.Api;
@@ -10,6 +10,9 @@ import io.swagger.annotations.ApiOperation;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang.StringUtils;
 import org.springframework.web.bind.annotation.*;
+
+import javax.validation.Valid;
+import java.util.List;
 
 @Slf4j
 @RestController
