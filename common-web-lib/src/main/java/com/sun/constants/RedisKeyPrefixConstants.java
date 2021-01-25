@@ -11,6 +11,11 @@ public class RedisKeyPrefixConstants {
     public static final String SHORT_MESSAGE = "SHORT_MESSAGE-";
 
     /**
+     * 字典
+     */
+    public static final String DICT = "CACHE-DICT-";
+
+    /**
      * 图片验证码
      */
     public static final String IMG_AUTH_CODE = "IMG_AUTH_CODE-";
