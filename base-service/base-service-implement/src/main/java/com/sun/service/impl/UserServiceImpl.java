@@ -1,6 +1,8 @@
 package com.sun.service.impl;
 
+import com.sun.annotation.UserDelete;
 import com.sun.dto.UserInsertDTO;
+import com.sun.exception.BusinessException;
 import com.sun.model.User;
 import com.sun.service.UserService;
 import org.apache.dubbo.config.annotation.Service;
@@ -33,7 +35,22 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public boolean insert(UserInsertDTO user) {
-        return true;
+    public void insert(UserInsertDTO user) {
+        if ("18300000000".equals(user.getPhone())) {
+            throw new BusinessException("手机号已存在");
+        }
+        System.out.println("新增用户");
+    }
+
+    @Override
+    public void update() {
+        System.out.println("修改用户");
+    }
+
+    @Override
+    @UserDelete
+    public String delete(String id) {
+        System.out.println("删除用户");
+        return id;
     }
 }

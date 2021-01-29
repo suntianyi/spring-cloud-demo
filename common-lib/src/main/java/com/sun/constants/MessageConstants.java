@@ -16,8 +16,8 @@ public class MessageConstants {
     public final static String ADD_SUCCESS = "添加成功";
     public final static String ADD_FAIL = "添加失败";
 
-    public final static String UPDATE_SUCCESS = "更新成功";
-    public final static String UPDATE_FAIL = "更新失败";
+    public final static String UPDATE_SUCCESS = "修改成功";
+    public final static String UPDATE_FAIL = "修改失败";
 
     public final static String DELETE_SUCCESS = "删除成功";
     public final static String DELETE_FAIL = "删除失败";

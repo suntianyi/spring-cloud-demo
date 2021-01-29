@@ -10,5 +10,9 @@ public interface UserService {
 
     User get(String id, String userName, String phone);
 
-    boolean insert(UserInsertDTO user);
+    void insert(UserInsertDTO user);
+
+    void update();
+
+    String delete(String id);
 }

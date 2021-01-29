@@ -44,6 +44,21 @@ public class UserController {
         if (StringUtils.isEmpty(userInsertDTO.getOrgId())) {
             userInsertDTO.setOrgId(user.getOrgId());
         }
-        return userService.insert(userInsertDTO) ? Result.success(MessageConstants.ADD_SUCCESS) : Result.fail(MessageConstants.ADD_FAIL);
+        userService.insert(userInsertDTO);
+        return Result.success(MessageConstants.ADD_SUCCESS);
+    }
+
+    @PostMapping(value = "/insert")
+    @ApiOperation(value = "修改用户")
+    public Result<String> update() {
+        userService.update();
+        return Result.success(MessageConstants.UPDATE_SUCCESS);
+    }
+
+    @PostMapping(value = "/delete")
+    @ApiOperation(value = "删除用户")
+    public Result<String> delete(@RequestHeader(value = "user") User user, String id) {
+        userService.delete(id);
+        return Result.success(MessageConstants.DELETE_SUCCESS);
     }
 }
