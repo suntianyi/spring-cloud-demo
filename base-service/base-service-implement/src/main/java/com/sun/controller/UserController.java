@@ -1,5 +1,6 @@
 package com.sun.controller;
 
+import com.sun.annotation.ApiVersion;
 import com.sun.constants.MessageConstants;
 import com.sun.dto.UserInsertDTO;
 import com.sun.model.User;
@@ -32,6 +33,7 @@ public class UserController {
         return Result.success(userService.list(orgId));
     }
 
+    @ApiVersion(version = 1)
     @GetMapping(value = "{id}")
     @ApiOperation(value = "根据ID查询")
     public Result<User> get(@PathVariable String id) {

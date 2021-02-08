@@ -1,4 +1,4 @@
-package com.sun.config;
+package com.sun.aspect;
 
 import com.alibaba.fastjson.JSON;
 import lombok.extern.slf4j.Slf4j;

@@ -2,11 +2,11 @@ package com.sun.service.impl;
 
 import com.sun.annotation.UserDelete;
 import com.sun.dto.UserInsertDTO;
-import com.sun.exception.BusinessException;
 import com.sun.model.User;
 import com.sun.service.UserService;
 import org.apache.dubbo.config.annotation.Service;
 import org.springframework.stereotype.Component;
+import org.springframework.util.Assert;
 
 import java.util.Collections;
 import java.util.List;
@@ -36,9 +36,7 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public void insert(UserInsertDTO user) {
-        if ("18300000000".equals(user.getPhone())) {
-            throw new BusinessException("手机号已存在");
-        }
+        Assert.state(!"18300000000".equals(user.getPhone()), "手机号已存在");
         System.out.println("新增用户");
     }
 

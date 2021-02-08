@@ -16,8 +16,8 @@ import java.util.List;
 @Slf4j
 public class GlobalExceptionHandler {
 
-    @ExceptionHandler({BusinessException.class})
-    public Result<String> handleException(BusinessException e) {
+    @ExceptionHandler({IllegalStateException.class})
+    public Result<String> handleException(IllegalStateException e) {
         log.error("业务异常:{}", e.getMessage());
         return Result.fail(e.getMessage());
     }
