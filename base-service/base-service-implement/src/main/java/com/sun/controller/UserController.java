@@ -17,7 +17,7 @@ import java.util.List;
 
 @Slf4j
 @RestController
-@RequestMapping(value = "/user")
+@RequestMapping(value = "/users")
 @Api(tags = "用户管理")
 public class UserController {
     private final UserService userService;
@@ -50,7 +50,7 @@ public class UserController {
         return Result.success(MessageConstants.ADD_SUCCESS);
     }
 
-    @PostMapping(value = "/insert")
+    @PostMapping(value = "/update")
     @ApiOperation(value = "修改用户")
     public Result<String> update() {
         userService.update();
@@ -59,7 +59,7 @@ public class UserController {
 
     @PostMapping(value = "/delete")
     @ApiOperation(value = "删除用户")
-    public Result<String> delete(@RequestHeader(value = "user") User user, String id) {
+    public Result<String> delete(String id) {
         userService.delete(id);
         return Result.success(MessageConstants.DELETE_SUCCESS);
     }

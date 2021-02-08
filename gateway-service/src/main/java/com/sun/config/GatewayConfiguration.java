@@ -74,8 +74,8 @@ public class GatewayConfiguration {
     private void initGatewayRules() {
         Set<GatewayFlowRule> rules = new HashSet<>();
         rules.add(new GatewayFlowRule("base-service")
-                .setCount(2)
-                .setIntervalSec(1)
+                .setCount(100)
+                .setIntervalSec(60)
         );
 //        rules.add(new GatewayFlowRule("aliyun_route")
 //                .setCount(2)
